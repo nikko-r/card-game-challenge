@@ -5,7 +5,13 @@ public class Card {
 //    String[] cards = {2,3,4,5,6,7,8,9,10,J,Q,K,A};
     private String cardSuit;
     private String cardFace;
-    private String cardValue;
+    private int cardValue;
+
+    public Card(String cardSuit, String cardFace, int cardValue) {
+        this.cardSuit = cardSuit;
+        this.cardFace = cardFace;
+        this.cardValue = cardValue;
+    }
 
     public String getCardFace() {
         return cardFace;
@@ -13,8 +19,9 @@ public class Card {
     public String getCardSuit() {
         return cardSuit;
     }
-    public String getCardValue() {
+    public int getCardValue() {
         return cardValue;
     }
+
 }
 // each card
