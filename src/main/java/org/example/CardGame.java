@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CardGame {
     static String[] suits = {"♥","♧","♦","♤"};
@@ -9,12 +10,17 @@ public class CardGame {
     static ArrayList<Card> deckOfCards = new ArrayList<>();
 
     public static void main(String[] args) {
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 4; i++){
             for (int i2 = 0; i2 < 13; i2++) {
                 Card card = new Card(suits[i],cards[i2],(i2+2));
                 deckOfCards.add(card);
             }
         }
+        System.out.println(deckOfCards.toString());
+        //Collections.sort( deckOfCards, (a, b) -> a.getCardFace().compareTo(b.getCardFace()) );
+        //Collections.sort( deckOfCards, (a, b) -> a.getCardValue()-(b.getCardValue()) );
+        //Collections.sort( deckOfCards, (a, b) -> a.getCardSuit().compareTo(b.getCardSuit()) );
+        Collections.shuffle(deckOfCards);
         System.out.println(deckOfCards.toString());
     }
 }

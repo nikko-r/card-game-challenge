@@ -23,5 +23,9 @@ public class Card {
         return cardValue;
     }
 
+    @Override
+    public String toString() {
+        return cardFace + " " + cardSuit;
+    }
 }
 // each card
