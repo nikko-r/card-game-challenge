@@ -9,6 +9,16 @@ public class CardGame {
 
     static ArrayList<Card> deckOfCards = new ArrayList<>();
 
+    public static Card dealCard() {
+        Card card = deckOfCards.get(0);
+        deckOfCards.remove(deckOfCards.get(0));
+        return card;
+    }
+
+    static ArrayList<Card> shuffleDeck(){
+        return Collections.shuffle(deckOfCards);
+    };
+
     public static void main(String[] args) {
         for (int i = 0; i < 4; i++){
             for (int i2 = 0; i2 < 13; i2++) {
@@ -20,7 +30,20 @@ public class CardGame {
         //Collections.sort( deckOfCards, (a, b) -> a.getCardFace().compareTo(b.getCardFace()) );
         //Collections.sort( deckOfCards, (a, b) -> a.getCardValue()-(b.getCardValue()) );
         //Collections.sort( deckOfCards, (a, b) -> a.getCardSuit().compareTo(b.getCardSuit()) );
-        Collections.shuffle(deckOfCards);
+
+        for(int i = 0;i<9;i++){
+            //System.out.println(deckOfCards.get(i).toString());
+            //Card first = deckOfCards.get(0);
+            deckOfCards.add(deckOfCards.get(0));
+            deckOfCards.remove(deckOfCards.get(0));
+            //Card last =  deckOfCards.get(deckOfCards.size() -1);
+            System.out.println(deckOfCards.toString());
+
+        }
+        System.out.println(dealCard());
         System.out.println(deckOfCards.toString());
+
     }
+
+
 }
